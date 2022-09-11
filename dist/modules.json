@@ -21,7 +21,7 @@
     {
       "name": "WebRightClick",
       "description": "Adds Copy/Save/Open Image/URL to right click context menus on the web.",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "tags": [
         "React",
         "DOM",
@@ -30,7 +30,7 @@
       "authors": [
         "ThaUnknown"
       ],
-      "hash": "7afaa2fac229e0431a9ba7187b35356661a12dc6f51f7cfa8666526eccf4401a0802f4fb33211986c2a726a10088a2b4cbceef22a9c825ff334d469411a6a195",
+      "hash": "17ef849d38da65287d1dac3556131c5af36e8a6876b6bcf941860a948946236fe671f4959518fe6f5ee8493ca6efd977bf4383d65d870db4478b95e8ee38f283",
       "github": {
         "stars": 0,
         "repo": "ThaUnknown/GMPlugins"
