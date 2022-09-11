@@ -1,0 +1,8 @@
+{
+  "main": "index.js",
+  "name": "WebRightClick",
+  "description": "Adds Copy/Save/Open Image/URL to right click context menus on the web.",
+  "tags": ["context menu"],
+  "authors": [""],
+  "version": "1.0.0"
+}

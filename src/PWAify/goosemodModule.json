@@ -1,0 +1,8 @@
+{
+  "main": "index.js",
+  "name": "PWAify",
+  "description": "Adds PWA functionality to the web version of Discord. [Better Menu Bar, Reactive Status Icon]",
+  "tags": ["context menu"],
+  "authors": [""],
+  "version": "1.0.0"
+}
