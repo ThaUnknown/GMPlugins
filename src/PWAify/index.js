@@ -1,4 +1,4 @@
-import { all } from '@goosemod/webpack'
+import { all, findByProps } from '@goosemod/webpack'
 import { patch } from '@goosemod/patcher'
 const manifest = {
   name: 'Discord',
@@ -34,6 +34,11 @@ export default {
       border-radius: 8px 0 0;
       overflow: hidden;
     }`
+      const notifications = findByProps('setPageTitleNotificationCount')
+      this.unpatch2 = patch(notifications, 'setPageTitleNotificationCount', count => {
+        navigator.setAppBadge(count)
+        return count
+      })
       document.head.prepend(this.manifest, this.styles) // prepend because append gets overwritten
       const titlebar = all().find(m => m?.default?.toString?.()?.includes('case m.PlatformTypes.WINDOWS'))
       this.unpatch = patch(titlebar, 'default', args => {
@@ -47,6 +52,7 @@ export default {
     },
     onRemove () {
       this.unpatch?.()
+      this.unpatch2?.()
       this.styles?.remove()
       this.manifest?.remove()
     }
