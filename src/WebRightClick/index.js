@@ -14,7 +14,7 @@ const buttons = [
       const res = await fetch(url)
       const blob = await res.blob()
       navigator.clipboard.write([
-        new ClipboardItem({ [blob.type]: blob })
+        new ClipboardItem({ 'image/png': blob })
       ])
     },
     id: 'c_1',
