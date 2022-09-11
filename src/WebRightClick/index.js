@@ -9,7 +9,7 @@ let unpatch
 const buttons = [
   {
     label: 'Copy',
-    action: async (_orig, info) => {
+    fn: async (_orig, info) => {
       const url = info.target.href || info.target.src
       const res = await fetch(url)
       const blob = await res.blob()
@@ -22,7 +22,7 @@ const buttons = [
   },
   {
     label: 'Save',
-    action: async (_orig, info) => {
+    fn: async (_orig, info) => {
       const url = info.target.href || info.target.src
       const res = await fetch(url)
       const blob = await res.blob()
@@ -39,7 +39,7 @@ const buttons = [
   },
   {
     label: 'Copy Link',
-    action: (_orig, info) => {
+    fn: (_orig, info) => {
       const url = info.target.href || info.target.src
       navigator.clipboard.writeText(url)
     },
@@ -48,7 +48,7 @@ const buttons = [
   },
   {
     label: 'Open Link',
-    action: (_orig, info) => {
+    fn: (_orig, info) => {
       const url = info.target.href || info.target.src
       open(url, '_blank')
     },
@@ -77,9 +77,8 @@ export default {
           const alreadyHasItem = findInReactTree(children, child => child?.props?.id === item.id)
           if (alreadyHasItem) continue
 
-          item.originalAction = item.action
           item.action = function () {
-            return item.originalAction(arguments, extraInfo)
+            return item.fn(arguments, extraInfo)
           }
 
           const props = { ...item }

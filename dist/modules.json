@@ -3,7 +3,7 @@
     {
       "name": "PWAify",
       "description": "Adds PWA functionality to the web version of Discord. [Better Menu Bar, Reactive Status Icon]",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tags": [
         "DOM",
         "CSS",
@@ -21,7 +21,7 @@
     {
       "name": "WebRightClick",
       "description": "Adds Copy/Save/Open Image/URL to right click context menus on the web.",
-      "version": "1.0.0",
+      "version": "1.0.2",
       "tags": [
         "React",
         "DOM",
@@ -30,7 +30,7 @@
       "authors": [
         "ThaUnknown"
       ],
-      "hash": "64c9eded622c70d308f058d6c285f73382c6a530b7a5195bca90105389829bd1bedead4edca155a31e5397ecb7719ee18c7456dcc38f186774a231720b8a8869",
+      "hash": "4502a0523edddc5cc3cdbfb775ff7b6169d8cc3d4229d8b7fb4dea0ba44b95fa3824b7cf2d9680b82363475f58c464f4d96c9c837c5e9bbd6292e20d6d0d563f",
       "github": {
         "stars": 0,
         "repo": "ThaUnknown/GMPlugins"
