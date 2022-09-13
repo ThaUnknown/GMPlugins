@@ -8,50 +8,46 @@ let unpatch
 
 const buttons = [
   {
-    label: 'Copy',
+    label: 'Copy Image',
     fn: async (_orig, info) => {
       const url = info.target.href || info.target.src
       const res = await fetch(url)
       const blob = await res.blob()
-      navigator.clipboard.write([
-        new ClipboardItem({ 'image/png': new Blob([blob], { type: 'image/png' }) })
-      ])
+      navigator.clipboard.write([new ClipboardItem({ 'image/png': new Blob([blob], { type: 'image/png' }) })])
     },
+    cond: ({ attachment }) => attachment?.content_type?.startsWith('image'),
     id: 'c_1',
     group: 'image'
   },
   {
-    label: 'Save',
+    label: 'Save Image',
     fn: async (_orig, info) => {
       const url = info.target.href || info.target.src
       const res = await fetch(url)
       const blob = await res.blob()
       const link = document.createElement('a')
-      const ourl = URL.createObjectURL(blob) // needed for cross origin :/
+      const ourl = URL.createObjectURL(blob) // needed for cross origin :/ sometimes CORS will be lineant
       link.download = url.slice(url.lastIndexOf('/') + 1, url.lastIndexOf('.'))
       link.href = ourl
       link.click()
       link.remove()
       URL.revokeObjectURL(ourl)
     },
+    cond: ({ attachment }) => attachment?.content_type?.startsWith('image'),
     id: 'c_2',
     group: 'image'
   },
   {
     label: 'Copy Link',
-    fn: (_orig, info) => {
-      const url = info.target.href || info.target.src
-      navigator.clipboard.writeText(url)
-    },
+    fn: (_orig, { message }) => navigator.clipboard.writeText(message.embeds[0].url),
+    cond: ({ message }) => message?.embeds?.[0]?.url,
     id: 'c_3',
     group: 'link'
   },
   {
     label: 'Open Link',
-    fn: (_orig, info) => {
-      const url = info.target.href || info.target.src
-      open(url, '_blank')
-    },
+    fn: (_orig, { message }) => open(message.embeds[0].url, '_blank'),
+    cond: ({ message }) => message?.embeds?.[0]?.url,
     id: 'c_4',
     group: 'link'
   }
@@ -74,6 +70,7 @@ export default {
         }
 
         for (const item of buttons) {
+          if (!item.cond(extraInfo)) continue
           const alreadyHasItem = findInReactTree(children, child => child?.props?.id === item.id)
           if (alreadyHasItem) continue
 

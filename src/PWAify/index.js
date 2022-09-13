@@ -30,23 +30,25 @@ export default {
       this.manifest.href = url
       this.styles = document.createElement('style')
       this.styles.textContent = /* css */`
-    .sidebar-1tnWFu {
-      border-radius: 8px 0 0;
-      overflow: hidden;
-    }
-    .withFrame-2dL45i {
-      height: env(titlebar-area-height, 0) !important;
-      margin-top: 0 !important;
-    }
-    .winButton-3UMjdg {
-      display: none !important;
-    }
-    .guilds-2JjMmN {
-      margin-top: calc(0px - calc(env(titlebar-area-height, 0) - 18px));
-    }
-    .wrapper-1_HaEi, .container-1eFtFS, .layer-86YKbF, .layers-1YQhyW, .layers-OrUESM {
-      overflow: visible !important;
-    }`
+      /* ✅ Remove Download Button (Web) */
+      @import url("https://crearts-community.github.io/CreArts-Discord/modules/remove/button/download.css"); 
+      .sidebar-1tnWFu {
+        border-radius: 8px 0 0;
+        overflow: hidden;
+      }
+      .withFrame-2dL45i {
+        height: env(titlebar-area-height, 0) !important;
+        margin-top: 0 !important;
+      }
+      .winButton-3UMjdg {
+        display: none !important;
+      }
+      .guilds-2JjMmN {
+        margin-top: calc(0px - calc(env(titlebar-area-height, 0) - 18px));
+      }
+      .wrapper-1_HaEi, .container-1eFtFS, .layer-86YKbF, .layers-1YQhyW, .layers-OrUESM {
+        overflow: visible !important;
+      }`
       const notifications = findByProps('setPageTitleNotificationCount')
       this.unpatch2 = patch(notifications, 'setPageTitleNotificationCount', count => {
         navigator.setAppBadge(count)
