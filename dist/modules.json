@@ -3,7 +3,7 @@
     {
       "name": "PWAify",
       "description": "Adds PWA functionality to the web version of Discord. [Better Menu Bar, Reactive Status Icon]",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "tags": [
         "DOM",
         "CSS",
@@ -12,7 +12,7 @@
       "authors": [
         "ThaUnknown"
       ],
-      "hash": "6667168bba77187fa1a09467704efe0fdd57370fdb17d241ae88b2e9ccf1e88090b588b1cef70b70593ec4e83f478443225a0af549dea3882b77c0af2d2bd334",
+      "hash": "61f030e46b71f3399c519de1835148e008ef436c113a47e9e007bd3e06998869fcc649de7aad437f425dec1b1881ace2ea88b3d50755cf98fa5ae6a7247c2614",
       "github": {
         "stars": 0,
         "repo": "ThaUnknown/GMPlugins"
