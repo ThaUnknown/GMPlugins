@@ -39,15 +39,15 @@ const buttons = [
   },
   {
     label: 'Copy Link',
-    fn: (_orig, { message }) => navigator.clipboard.writeText(message.embeds[0].url),
-    cond: ({ message }) => message?.embeds?.[0]?.url,
+    fn: (_orig, { message }) => navigator.clipboard.writeText(message?.attachments?.[0]?.url || message.embeds[0].url),
+    cond: ({ message }) => message?.attachments?.[0]?.url || message?.embeds?.[0]?.url,
     id: 'c_3',
     group: 'link'
   },
   {
     label: 'Open Link',
-    fn: (_orig, { message }) => open(message.embeds[0].url, '_blank'),
-    cond: ({ message }) => message?.embeds?.[0]?.url,
+    fn: (_orig, { message }) => open(message?.attachments?.[0]?.url || message.embeds[0].url, '_blank'),
+    cond: ({ message }) => message?.attachments?.[0]?.url || message?.embeds?.[0]?.url,
     id: 'c_4',
     group: 'link'
   }
