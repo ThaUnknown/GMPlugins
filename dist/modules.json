@@ -3,7 +3,7 @@
     {
       "name": "PWAify",
       "description": "Adds PWA functionality to the web version of Discord. [Better Menu Bar, Reactive Status Icon]",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "tags": [
         "DOM",
         "CSS",
@@ -12,7 +12,7 @@
       "authors": [
         "ThaUnknown"
       ],
-      "hash": "babdc9589c8f477eec80408a58cdd4664fccd1f30dc4af0ac6aeecf0947feba78b0e262e616c5c0fc0151cd624b1185cee179ab55939c661d6d44f2628bb6e8b",
+      "hash": "35b8ccba38512e235d3555b5683c99ce916a7db84ad66d0f08e3c7f230271cb93165fcf97a147e476b558588bd4599fb2a82429232352eb1abffee4735571175",
       "github": {
         "stars": 0,
         "repo": "ThaUnknown/GMPlugins"
@@ -31,6 +31,23 @@
         "ThaUnknown"
       ],
       "hash": "7efb4c0f71bfa000c8f70498f3a4fc80c22c3afe5d2710892f0bb9f73a2b46014efd1ef5be9ee8768f35c4df99bd5524da3436236e9731aaf2bc9ef843f20fde",
+      "github": {
+        "stars": 0,
+        "repo": "ThaUnknown/GMPlugins"
+      }
+    },
+    {
+      "name": "WebScreenShare",
+      "description": "Improves Screen Share functionality on the web version of Discord.",
+      "version": "1.0.0",
+      "tags": [
+        "React",
+        "context menu"
+      ],
+      "authors": [
+        "ThaUnknown"
+      ],
+      "hash": "83529aaefdb53b1cc1b82a7f27cfff1fb35d70ed5ac2f773a6d794c73a1933fa2b5c703bc22217f04ae2dd717e7b20acd165c968373c89202bbb6f3c2a9b1a70",
       "github": {
         "stars": 0,
         "repo": "ThaUnknown/GMPlugins"
